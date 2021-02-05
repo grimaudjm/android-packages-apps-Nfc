@@ -1,0 +1,35 @@
+cc_library_shared {
+    name: "libstnfc_nci_jni",
+
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Wno-unused-parameter",
+        "-Werror",
+        "-DST21NFC",
+        "-DST21NFC_DTA",
+    ] ,
+
+    srcs: ["*.cpp"],
+
+    shared_libs: [
+        "libandroidicu",
+        "libnativehelper",
+        "libcutils",
+        "libutils",
+        "liblog",
+        "libstnfc-nci",
+        "libchrome",
+        "libbase",
+        "libdl",
+        "libnfc_st_dta_jni",
+    ],
+
+    static_libs: [	"libxml2",
+    				"libnfc_jni"],
+
+    proprietary: false,
+    owner: "st",
+    system_ext_specific: true,
+
+}
